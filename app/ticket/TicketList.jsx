@@ -1,7 +1,11 @@
 import Link from "next/link";
 
 async function getTickets() {
-    const res = await fetch('http://localhost:4000/tickets');
+    const res = await fetch('http://localhost:4000/tickets', {
+        next:{
+            revalidate : 0
+        }
+    });
     if (!res.ok) {
       throw new Error('Failed to fetch tickets');
     }
