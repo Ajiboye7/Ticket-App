@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import TicketList from "./TicketList";
 
 export default function Tickets() {
@@ -9,7 +10,10 @@ export default function Tickets() {
                     <p>Currently Open tickets</p>
                 </div>
             </nav>
+            <Suspense fallback ={<loading/>}>
             <TicketList />
+            </Suspense>
+         
         </main>
     );
 }
