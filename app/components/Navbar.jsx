@@ -7,6 +7,7 @@ function Navbar() {
     <h1>My Helpdesk</h1>
       <Link href='/'>Dashboard</Link>
       <Link href='ticket'>Tickets</Link>
+      <Link href='create'>Create</Link>
     </nav>
   )
 }

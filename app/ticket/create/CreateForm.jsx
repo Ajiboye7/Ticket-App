@@ -1,5 +1,5 @@
 "use client"
-import { useRouter } from "next/Navigation"
+import { useRouter } from "next/navigation"
 import { useState } from "react"
 
 
@@ -16,7 +16,7 @@ export default function CreateForm() {
         e.preventDefault()
         setIsLoading(true)
         const ticket ={
-            title, body, priority , user_email : "ajiboyemuyideen7@gmail.com"
+            title, body, priority , user_email : "ajiboyemuyideen7@gmail.com" 
         }
         const res = await fetch ("http://localhost:4000/tickets", {
             method: "POST",
@@ -38,9 +38,9 @@ export default function CreateForm() {
       name="title" 
       onChange={(e)=> setTitle(e.target.value)}
       value={title}
-
       />
     </label>
+
     <label>
       <span>Body:</span>
       <textarea
@@ -49,6 +49,7 @@ export default function CreateForm() {
       onChange={(e)=> setBody(e.target.value)}
       value={body} />
     </label>
+
     <label>
       <span>Priority:</span>
       <select 
@@ -60,6 +61,7 @@ export default function CreateForm() {
         <option value="high">High Priority</option>
       </select>
     </label>
+    
    <button className="btn-primary"
    disabled = {isLoading}
    >
